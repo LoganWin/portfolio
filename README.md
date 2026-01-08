@@ -63,3 +63,7 @@ yarn preview
 - No runtime API calls; all content is static TypeScript data.
 - User input is limited to navigation, card toggles, and scrolling; there are no forms or stored submissions.
 
+
+## Links to include for future reference
+- https://tempora-ai.vercel.app/
+- http://2056-2108-1596-history-timeline.s3-website.us-east-2.amazonaws.com/
