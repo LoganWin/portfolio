@@ -1424,31 +1424,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"history-creative-timeline@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "history-creative-timeline@workspace:."
-  dependencies:
-    "@tailwindcss/postcss": "npm:^4.1.16"
-    "@types/node": "npm:^24.10.0"
-    "@types/react": "npm:^19.1.16"
-    "@types/react-dom": "npm:^19.1.9"
-    "@types/react-router-dom": "npm:^5.3.3"
-    "@vitejs/plugin-react-swc": "npm:^4.1.0"
-    autoprefixer: "npm:^10.4.21"
-    baseline-browser-mapping: "npm:^2.9.13"
-    daisyui: "npm:^5.4.7"
-    flyonui: "npm:^2.4.1"
-    jiti: "npm:^2.6.1"
-    postcss: "npm:^8.5.6"
-    react: "npm:^19.1.1"
-    react-dom: "npm:^19.1.1"
-    react-router-dom: "npm:^7.9.5"
-    tailwindcss: "npm:^3"
-    typescript: "npm:~5.9.3"
-    vite: "npm:^7.1.7"
-  languageName: unknown
-  linkType: soft
-
 "http-cache-semantics@npm:^4.1.1":
   version: 4.2.0
   resolution: "http-cache-semantics@npm:4.2.0"
@@ -1994,6 +1969,31 @@ __metadata:
   checksum: 10c0/a51f108dd811beb779d58a76864bbd49e239fa40c7984cd11596c75a121a8cc789f1c8971d8bb15f0dbf9d48b76c05bb62fcbce840f89b688c0fa64b37e8478a
   languageName: node
   linkType: hard
+
+"portfolio@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "portfolio@workspace:."
+  dependencies:
+    "@tailwindcss/postcss": "npm:^4.1.16"
+    "@types/node": "npm:^24.10.0"
+    "@types/react": "npm:^19.1.16"
+    "@types/react-dom": "npm:^19.1.9"
+    "@types/react-router-dom": "npm:^5.3.3"
+    "@vitejs/plugin-react-swc": "npm:^4.1.0"
+    autoprefixer: "npm:^10.4.21"
+    baseline-browser-mapping: "npm:^2.9.13"
+    daisyui: "npm:^5.4.7"
+    flyonui: "npm:^2.4.1"
+    jiti: "npm:^2.6.1"
+    postcss: "npm:^8.5.6"
+    react: "npm:^19.1.1"
+    react-dom: "npm:^19.1.1"
+    react-router-dom: "npm:^7.9.5"
+    tailwindcss: "npm:^3"
+    typescript: "npm:~5.9.3"
+    vite: "npm:^7.1.7"
+  languageName: unknown
+  linkType: soft
 
 "postcss-import@npm:^15.1.0":
   version: 15.1.0
