@@ -32,7 +32,7 @@ export default function Layout() {
   // Calculate progress based on current route
   const getProgress = () => {
     if (location.pathname === '/skills') return 100;
-    if (location.pathname === '/about') return 66; // Future about page
+    if (location.pathname === '/about') return 66;
     return 33; // Home page
   };
   const progress = getProgress();
