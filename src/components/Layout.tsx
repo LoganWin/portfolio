@@ -29,6 +29,14 @@ export default function Layout() {
     window.scrollTo(0, 0);
   }, [location.pathname]);
 
+  // Calculate progress based on current route
+  const getProgress = () => {
+    if (location.pathname === '/skills') return 100;
+    if (location.pathname === '/about') return 66; // Future about page
+    return 33; // Home page
+  };
+  const progress = getProgress();
+
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-white">
       {/* Global Navigation */}
@@ -36,6 +44,16 @@ export default function Layout() {
 
       {/* Page Content */}
       <Outlet />
+
+      {/* Portfolio Progress Indicator - Fixed bottom right */}
+      <div className="fixed bottom-8 right-8 z-40 text-right">
+        <div className="h-1 w-32 overflow-hidden rounded-full bg-white/10">
+          <div
+            className="h-full rounded-full bg-white/40 transition-all duration-500"
+            style={{ width: `${progress}%` }}
+          />
+        </div>
+      </div>
     </div>
   );
 }

@@ -23,42 +23,43 @@ import type { Project } from './ProjectModal';
 const PROJECTS: Project[] = [
   {
     id: 'project-1',
-    name: 'Cortex',
-    tagline: 'AI-Powered Analytics',
+    name: 'Navigational Web Application',
+    tagline: 'Software Engineering Project in Collaberation with Mass General Brigham',
     description:
-      'Placeholder description for Project 1. This is where you would describe the project, its goals, challenges faced, and solutions implemented. Add details about your role and contributions.',
-    technologies: ['React', 'Python', 'TensorFlow', 'PostgreSQL'],
-    liveUrl: 'https://example.com',
-    githubUrl: 'https://github.com',
+      'This is a Full Stack Navigation Web Application built with the PERN stack for Mass General Brigham. The application allows users to navigate to a desired hosipital in the Mass Generall Brigham network using Google Maps API integration. Users may also send in a varity of service request using voice reconition. Other features include user authentication, 3 dimentional pathfinding in First Person View, step-by-step directions, map editor, and a hardware RFID login system. The project was developed as part of WPI\'s Software Engineering course, focusing on best practices in software development, teamwork, and strict agile methodologies.',
+    technologies: ['Postgres', 'Express', 'React', 'Node', 'TypeScript', 'Tailwindcss', 'AWS'],
+    message: "This application is not live and the code base is confidential.",
+    imageUrl: 'SoftEng_Homepage.jpeg',
   },
   {
     id: 'project-2',
-    name: 'Quant',
-    tagline: 'Financial Dashboard',
+    name: 'TemporaAI',
+    tagline: 'Student Focused, AI-Driven Calendar Platform',
     description:
-      'Placeholder description for Project 2. Explain the purpose of the project, technical decisions made, and the impact it had. Include metrics if available.',
-    technologies: ['TypeScript', 'Node.js', 'D3.js', 'Redis'],
-    liveUrl: 'https://example.com',
-    githubUrl: 'https://github.com',
+      'TemporaAI is a professional web-based scheduling platform built with Next.js, React, TypeScript, and a PostgreSQL backend managed through Prisma ORM. Its core intelligence is powered by transformer-based Large Language Models (LLMs) capable of natural language processing, reasoning, and multimodal understanding, allowing the system to ingest unstructured inputs such as text, structured data, and OCR-extracted scheduling information from images (e.g., syllabi or timetables) and convert them into structured schedule objects. To ensure personalized and accurate scheduling, TemporaAI integrates Retrieval-Augmented Generation (RAG) to retrieve existing user constraints from a knowledge base and ground event recommendations, alongside Agentic Tool Use, enabling the AI to autonomously invoke structured functions that directly modify the schedule database. The prototype supports two primary features: AI-powered schedule generation/combination for creating complete personal schedules, and AI-powered group event planning that automatically finds meeting times across multiple users.',
+    technologies: ['TypeScript', 'Next.js', 'Node', 'React', 'Prisma', 'PostgreSQL', 'Tailwindcss', 'OpenAI API'],
+    liveUrl: 'https://tempora-ai.vercel.app/',
+    githubUrl: 'https://github.com/hankpharris/tempora-ai.git',
+    imageUrl: 'TemporaAI_Homepage.png',
   },
   {
     id: 'project-3',
-    name: 'Aelf',
-    tagline: 'Mobile Application',
+    name: 'School Benchmarking Platform',
+    tagline: 'Data-Driven Analytics Dashboard for Educational Institutions, Collaberating with Osprey Software',
     description:
-      'Placeholder description for Project 3. Detail the technologies used, architecture decisions, and any interesting technical challenges you solved.',
-    technologies: ['React Native', 'Firebase', 'GraphQL'],
-    githubUrl: 'https://github.com',
+      'A full-stack web application enabling schools to submit annual benchmarking data and visualize performance metrics against peer institutions. The platform features JWT-based authentication with role-based access for school users and system administrators, a multi-step data entry form with comprehensive validation (required fields, type checks, range validation), and interactive dashboards displaying KPIs across categories like facilities, academics, and athletics. Built with Chart.js for dynamic visualizations including bar and line charts, users can filter by year and peer groups while viewing their school\'s metrics against aggregated peer statistics. The backend enforces strict data privacy, ensuring schools only access their own data alongside anonymized peer group averages.',
+    technologies: ['React', 'Node.js', 'Express', 'PostgreSQL', 'Chart.js', 'JWT', 'TypeScript'],
+    message: 'Project in development - coming soon.',
+    imageUrl: 'osprey.png',
   },
   {
     id: 'project-4',
-    name: 'Meeton',
-    tagline: 'Collaboration Platform',
+    name: 'AI in Education',
+    tagline: 'WPI - Iteractive Qualifying Project',
     description:
-      'Placeholder description for Project 4. Share the story of the project, from ideation to implementation, and what you learned along the way.',
-    technologies: ['Next.js', 'Prisma', 'WebRTC', 'AWS'],
-    liveUrl: 'https://example.com',
-    githubUrl: 'https://github.com',
+      'This project examines how generative AI tools like ChatGPT are transforming computational and STEM education. My team and I investigated how both lecturers and students are currently using AI, as well as the benefits, risks, and emerging challenges surrounding academic integrity, overreliance, and assessment design. Using a mixed-methods approach, we performed semi-structured faculty interviews and collected over 220 student survey responses to identify trends in AI adoption, attitudes, and knowledge gaps. The project culminated in actionable recommendations for responsibly integrating AI into higher education, emphasizing transparent policies, AI literacy training, and assessment strategies that preserve critical thinking while leveraging AI as a supportive learning tool. This research project was conducted with ZHAW Wädenswil in Zürich, Switzerland, as a part of WPI\s Cirriculum.',
+    message: 'This project is research-based and does not have a live application.',
+    imageUrl: 'Zurich.jpg',
   },
 ];
 
@@ -85,8 +86,6 @@ const NODE_ICONS = [
 
 export default function Hero() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-  const [currentSlide] = useState(1);
-  const totalSlides = 3;
 
   /**
    * Handles project node click
@@ -245,39 +244,10 @@ export default function Hero() {
         </h1>
 
         {/* Subheadline */}
-        <p className="mx-auto mb-10 max-w-2xl text-lg text-white/50">
+        <p className="mx-auto max-w-2xl text-lg text-white/50">
           Dive into my portfolio, where innovative technology meets creative design.
           Building elegant solutions for complex problems.
         </p>
-
-        {/* CTA Buttons */}
-        <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <a
-            href="#projects"
-            className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 font-semibold text-black transition-all hover:bg-white/90"
-          >
-            View Projects
-            <svg
-              className="h-4 w-4"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M7 17L17 7M17 7H7M17 7V17"
-              />
-            </svg>
-          </a>
-          <a
-            href="#about"
-            className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-6 py-3 font-semibold text-white backdrop-blur-sm transition-all hover:border-white/40 hover:bg-white/10"
-          >
-            Discover More
-          </a>
-        </div>
       </div>
 
       {/* Bottom Left - Scroll Indicator */}
@@ -297,20 +267,7 @@ export default function Hero() {
             />
           </svg>
         </div>
-        <span className="text-sm">
-          0{currentSlide}/0{totalSlides} . Scroll down
-        </span>
-      </div>
-
-      {/* Bottom Right - Status Indicator */}
-      <div className="absolute bottom-8 right-8 text-right">
-        <div className="mb-2 text-sm text-white/40">Portfolio horizons</div>
-        <div className="h-1 w-32 overflow-hidden rounded-full bg-white/10">
-          <div
-            className="h-full rounded-full bg-white/40 transition-all duration-500"
-            style={{ width: `${(currentSlide / totalSlides) * 100}%` }}
-          />
-        </div>
+        <span className="text-sm">Scroll down</span>
       </div>
 
       {/* Project Modal */}

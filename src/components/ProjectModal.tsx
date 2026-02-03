@@ -20,13 +20,15 @@ export interface Project {
   /** Full project description */
   description: string;
   /** Technologies used */
-  technologies: string[];
+  technologies?: string[];
   /** Optional live demo URL */
   liveUrl?: string;
   /** Optional GitHub repository URL */
   githubUrl?: string;
   /** Optional image URL */
   imageUrl?: string;
+  /** Optional message to display when no links are available */
+  message?: string;
 }
 
 /** Props for the ProjectModal component */
@@ -90,7 +92,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
       {/* Modal Content */}
       <div
         ref={modalRef}
-        className="relative w-full max-w-2xl overflow-hidden rounded-2xl border border-white/10 bg-[#111]/95 shadow-2xl backdrop-blur-xl"
+        className="relative max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-2xl border border-white/10 bg-[#111]/95 shadow-2xl backdrop-blur-xl"
       >
         {/* Close Button */}
         <button
@@ -109,7 +111,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
             <img
               src={project.imageUrl}
               alt={project.name}
-              className="h-full w-full object-cover"
+              className="h-full w-full object-contain"
             />
           ) : (
             <div className="flex h-full w-full items-center justify-center">
@@ -118,6 +120,9 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
               </div>
             </div>
           )}
+          {/* Vignette gradient overlay - darkens all edges */}
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_20%,rgba(17,17,17,0.7)_70%,#111_100%)]" />
+          {/* Extra bottom fade for smooth content transition */}
           <div className="absolute inset-0 bg-gradient-to-t from-[#111] via-transparent to-transparent" />
         </div>
 
@@ -143,23 +148,25 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
           </div>
 
           {/* Technologies */}
-          <div className="mb-8">
-            <h3 className="mb-3 text-sm font-semibold uppercase tracking-wider text-white/40">
-              Technologies
-            </h3>
-            <div className="flex flex-wrap gap-2">
-              {project.technologies.map((tech) => (
-                <span
-                  key={tech}
-                  className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-white/70"
-                >
-                  {tech}
-                </span>
-              ))}
+          {project.technologies && project.technologies.length > 0 && (
+            <div className="mb-8">
+              <h3 className="mb-3 text-sm font-semibold uppercase tracking-wider text-white/40">
+                Technologies
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {project.technologies.map((tech) => (
+                  <span
+                    key={tech}
+                    className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-white/70"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
             </div>
-          </div>
+          )}
 
-          {/* Action Buttons */}
+          {/* Action Buttons or Message */}
           <div className="flex flex-wrap gap-3">
             {project.liveUrl && (
               <a
@@ -186,6 +193,10 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                 </svg>
                 View Code
               </a>
+            )}
+            {/* Show message when no links are available */}
+            {!project.liveUrl && !project.githubUrl && project.message && (
+              <p className="text-sm italic text-white/50">{project.message}</p>
             )}
           </div>
         </div>

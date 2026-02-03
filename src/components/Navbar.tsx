@@ -5,7 +5,6 @@
  * Features:
  * - Resume preview button on the left
  * - Centered navigation links in a pill container
- * - Contact button on the right
  *
  * @module components/Navbar
  */
@@ -26,8 +25,7 @@ interface NavLink {
 const NAV_LINKS: NavLink[] = [
   { label: 'Home', href: '/', isRoute: true },
   { label: 'About', href: '#about' },
-  { label: 'Skills', href: '/skills', isRoute: true },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Skills', href: '/skills', isRoute: true }
 ];
 
 export default function Navbar() {
@@ -96,13 +94,15 @@ export default function Navbar() {
                 </li>
               ))}
 
-              {/* Portfolio Link with Arrow */}
+              {/* LinkedIn Link with Arrow */}
               <li>
                 <a
-                  href="#portfolio"
+                  href="https://www.linkedin.com/in/logan-winters-31597b2b2"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="ml-2 flex items-center gap-1 rounded-full bg-white/10 px-4 py-2 text-sm font-medium text-white transition-all hover:bg-white/20"
                 >
-                  Portfolio
+                  LinkedIn
                   <svg
                     className="h-3.5 w-3.5"
                     fill="none"
@@ -138,9 +138,8 @@ export default function Navbar() {
 
           {/* Right Side - Name & Contact */}
           <div className="flex items-center gap-4">
-            <span className="hidden text-sm text-white/70 lg:block">Logan Winters</span>
             <a
-              href="mailto:contact@loganwinters.dev"
+              href="mailto:logan9win@gmail.com"
               className="flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium text-white/70 transition-colors hover:text-white"
             >
               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
